@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Score</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Score</h1>
+    <p>Please enter your score for the following subjects</p>
+    <form action="{{url_for('process_res')}}" method="POST">
+        <input type='text' name='lvl' value='{{ lvl }}' hidden>
+        <table border=1px width=60%>
+            <tr>
+                <th>Subject</th>
+                <th>Score</th>
+            </tr>
+            {% for subj in all_subjs %}
+            <tr>
+                <td>{{ subj[0] }}</td>
+                <td><input type='number' name='{{ subj[1] }}' min='0' max='100' step=1 value='{{ range(35, 100) | random }}'></td>   <!--this is jinja's random expression-->
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            <input type="submit" value="Calculate">
+        </p>
+    </form>
+</body>
+</html>

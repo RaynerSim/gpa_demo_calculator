@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;   /*this removes all the preset margin of diff ele in html */
+    border: 1px solid rgb(255, 183, 183);
+}
+
+h1 {
+    border: 3px solid blue;
+    width: 60%;
+    margin: 2% auto;
+    text-align: center;
+}
+
+.main_section {
+    width: 60%;
+    margin: 0 auto;   /* the first value is up and down, the second value is left and right */   /* % is dependent on the parent, vh is dependent on the whole view panel */
+    height: 60vh;
+    display: flex;   /* this is to display the items in a flexible manner (by default making it to row */
+    flex-direction: column;   /* this makes the ele arrangement back to columns */
+    /* to use the following two lines, we need to write "display: flex;" first */
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.p1_form {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+select {
+    width: 45%;
+}
+
+input[type='submit']{
+    width: 55%;
+}
